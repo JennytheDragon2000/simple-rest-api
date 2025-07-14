@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: simple-rest-api
+
+  # MySQL Database configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/userdb?useSSL=false&serverTimezone=UTC
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # Connection pool settings
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+  # JPA/Hibernate configuration
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Server configuration
+server:
+  port: 8080
